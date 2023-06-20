@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 @Module({
   imports: [
@@ -11,9 +12,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       port: 3306,
       username: 'root',
       password: 'treinaweb',
-      entities: [__dirname + '/../**/*.entity(.ts,js)'],
+      entities: [__dirname + '/../**/*.entity(.ts,.js)'],
       database: 'app-api',
       synchronize: true,
+      namingStrategy: new SnakeNamingStrategy(),
     }),
   ],
   controllers: [AppController],
