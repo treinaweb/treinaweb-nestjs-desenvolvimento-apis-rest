@@ -22,8 +22,7 @@ export class AlunosController {
 
   @Get()
   findAll() {
-    const alunos = ['Wesley', 'Maria', 'Bruno'];
-    return alunos;
+    return this.alunosService.findAll();
   }
 
   @Get(':id')
