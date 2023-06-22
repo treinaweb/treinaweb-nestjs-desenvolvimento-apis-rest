@@ -16,12 +16,12 @@ export class AlunosService {
     return await this.repository.save(aluno);
   }
 
-  findAll() {
-    return this.repository.find();
+  async findAll() {
+    return await this.repository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} aluno`;
+  async findOne(id: number) {
+    return await this.repository.findOneBy({ id: id });
   }
 
   update(id: number, updateAlunoDto: UpdateAlunoDto) {
