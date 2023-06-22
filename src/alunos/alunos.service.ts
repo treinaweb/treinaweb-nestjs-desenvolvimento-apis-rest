@@ -17,15 +17,19 @@ export class AlunosService {
   }
 
   async findAll() {
-    return await this.repository.find();
+    return await this.repository.find({
+      relations: {
+        turma: true,
+      },
+    });
   }
 
   async findOne(id: number) {
     return await this.repository.findOneBy({ id: id });
   }
 
-  update(id: number, updateAlunoDto: UpdateAlunoDto) {
-    return `This action updates a #${id} aluno`;
+  async update(id: number, updateAlunoDto: UpdateAlunoDto) {
+    return await this.repository.update(id, updateAlunoDto);
   }
 
   remove(id: number) {
