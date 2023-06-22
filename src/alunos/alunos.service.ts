@@ -11,8 +11,9 @@ export class AlunosService {
     @InjectRepository(Aluno)
     private repository: Repository<Aluno>,
   ) {}
-  create(createAlunoDto: CreateAlunoDto) {
-    return 'This action adds a new aluno';
+  async create(createAlunoDto: CreateAlunoDto) {
+    const aluno = this.repository.create(createAlunoDto);
+    return await this.repository.save(aluno);
   }
 
   findAll() {
