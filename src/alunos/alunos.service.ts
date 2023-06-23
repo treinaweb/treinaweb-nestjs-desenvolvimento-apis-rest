@@ -32,7 +32,7 @@ export class AlunosService {
     return await this.repository.update(id, updateAlunoDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} aluno`;
+  async remove(id: number) {
+    return await this.repository.delete({ id: id });
   }
 }
