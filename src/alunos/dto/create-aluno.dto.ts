@@ -1,3 +1,4 @@
+import { Expose, Transform } from 'class-transformer';
 import {
   IsNotEmpty,
   IsNumber,
@@ -12,6 +13,8 @@ export class CreateAlunoDto {
   @IsNotEmpty({ message: 'Nome não pode ser vazio' })
   @IsString({ message: 'Nome deve ser string' })
   @Length(3, 15, { message: 'Nome precisa ter entre 3 a 15 caracteres' })
+  @Expose({ name: 'nome_completo' })
+  @Transform(({ value }) => value.toLowerCase())
   nome: string;
 
   @IsNotEmpty({ message: 'Gênero não pode ser vazio' })

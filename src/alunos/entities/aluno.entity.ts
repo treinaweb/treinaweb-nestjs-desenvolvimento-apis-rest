@@ -1,3 +1,4 @@
+import { Exclude, Expose } from 'class-transformer';
 import { Turma } from 'src/turmas/entities/turma.entity';
 import {
   Column,
@@ -15,6 +16,7 @@ export class Aluno {
   id: number;
 
   @Column({ nullable: false })
+  @Expose({ name: 'nome_completo' })
   nome: string;
 
   @Column({ nullable: false })
@@ -24,12 +26,14 @@ export class Aluno {
   @JoinColumn({ name: 'turma_id' })
   turma: Turma;
 
+  @Exclude()
   @CreateDateColumn({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP(6)',
   })
   createdAt: Date;
 
+  @Exclude()
   @UpdateDateColumn({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP(6)',
