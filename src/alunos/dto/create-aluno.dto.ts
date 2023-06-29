@@ -7,6 +7,7 @@ import {
   Max,
   Min,
 } from 'class-validator';
+import { HateoasLinks } from 'src/core/hateoas/hateoas-interface';
 import { Turma } from 'src/turmas/entities/turma.entity';
 
 export class CreateAlunoDto {
@@ -27,4 +28,6 @@ export class CreateAlunoDto {
   @Min(1, { message: 'Turma deve ser maior que 0' })
   @Max(99, { message: 'Turma deve ser menor que 99' })
   turma: Turma;
+
+  links?: HateoasLinks[];
 }

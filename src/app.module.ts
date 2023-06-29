@@ -6,6 +6,9 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { AlunosModule } from './alunos/alunos.module';
 import { TurmasModule } from './turmas/turmas.module';
 import { join } from 'path';
+import { APP_FILTER } from '@nestjs/core';
+import { HttpExceptionFilter } from './commom/filters/http-exception.filter';
+import { UrlGeneratorModule } from 'nestjs-url-generator';
 
 @Module({
   imports: [
@@ -22,8 +25,17 @@ import { join } from 'path';
     }),
     AlunosModule,
     TurmasModule,
+    UrlGeneratorModule.forRoot({
+      appUrl: 'http://localhost:3000',
+    }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_FILTER,
+      useClass: HttpExceptionFilter,
+    },
+  ],
 })
 export class AppModule {}

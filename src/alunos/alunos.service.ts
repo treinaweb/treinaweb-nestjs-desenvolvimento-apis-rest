@@ -1,10 +1,11 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateAlunoDto } from './dto/create-aluno.dto';
 import { UpdateAlunoDto } from './dto/update-aluno.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Aluno } from './entities/aluno.entity';
 import { Repository } from 'typeorm';
-import { AlunoNotFoundException } from './exceptions/alunoNotFound.exception';
+import { AlunoNotFoundException } from './exceptions/aluno-not-found.exception';
+import { IPaginationOptions, paginate } from 'nestjs-typeorm-paginate';
 
 @Injectable()
 export class AlunosService {
@@ -17,12 +18,13 @@ export class AlunosService {
     return await this.repository.save(aluno);
   }
 
-  async findAll() {
-    return await this.repository.find({
-      relations: {
-        turma: true,
-      },
-    });
+  async findAll(options: IPaginationOptions) {
+    const query = await this.repository
+      .createQueryBuilder('aluno')
+      .leftJoinAndSelect('aluno.turma', 'turma')
+      .orderBy('aluno.id', 'ASC');
+
+    return await paginate(query, options);
   }
 
   async findOne(id: number) {
@@ -32,10 +34,7 @@ export class AlunosService {
       if (error.name === 'EntityNotFoundError') {
         throw new AlunoNotFoundException();
       }
-      throw new HttpException(
-        'Erro interno de servidor',
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
+      throw new InternalServerErrorException();
     }
   }
 

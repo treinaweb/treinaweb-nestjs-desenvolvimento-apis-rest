@@ -1,3 +1,4 @@
+import { Expose } from 'class-transformer';
 import { Aluno } from 'src/alunos/entities/aluno.entity';
 import {
   Column,
@@ -19,12 +20,14 @@ export class Turma {
   @OneToMany(() => Aluno, (aluno) => aluno.turma)
   aluno: Aluno;
 
+  @Expose({ name: 'created_at' })
   @CreateDateColumn({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP(6)',
   })
   createdAt: Date;
 
+  @Expose({ name: 'updated_at' })
   @UpdateDateColumn({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP(6)',
