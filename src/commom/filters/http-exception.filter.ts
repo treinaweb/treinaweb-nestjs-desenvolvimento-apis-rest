@@ -14,13 +14,26 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const request = context.getRequest<Request>();
     const response = context.getResponse<Response>();
 
+    console.log(exception);
+
     if (exception instanceof InternalServerErrorException) {
-      response.status(500).send({
+      return response.status(500).send({
         statusCode: 500,
         message: 'Erro interno',
         error: exception.name,
       });
     }
-    response.status(exception.getStatus()).send(exception);
+
+    if (
+      exception.name === 'QueryFailedError' ||
+      exception.name === 'TypeError'
+    ) {
+      return response.status(400).send({
+        statusCode: 400,
+        message: 'Bad Request',
+        error: exception.name,
+      });
+    }
+    return response.status(exception.getStatus()).send(exception);
   }
 }

@@ -34,19 +34,18 @@ export class AlunosService {
       if (error.name === 'EntityNotFoundError') {
         throw new AlunoNotFoundException();
       }
-      throw new InternalServerErrorException();
     }
   }
 
   async update(id: number, updateAlunoDto: UpdateAlunoDto) {
-    return await this.repository.update(id, updateAlunoDto);
+    const response = await this.repository.update(id, updateAlunoDto);
+    if (response.affected === 0) throw new AlunoNotFoundException();
+    return { message: 'Aluno atualizado com sucesso' };
   }
 
   async remove(id: number) {
     const response = await this.repository.delete({ id: id });
-    if (response.affected === 0) {
-      throw new AlunoNotFoundException();
-    }
-    return await this.repository.delete({ id: id });
+    if (response.affected === 0) throw new AlunoNotFoundException();
+    return { message: 'Aluno excluido com sucessso' };
   }
 }
