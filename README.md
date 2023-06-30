@@ -1,73 +1,16 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+#### Lista de commits
+Aula | Commit | Link 
+------ | ------ | ------ 
+Aula 2 | Criando Projeto | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/b6f3f6f1d3e3b9c00c11618ea74dbc981dabb9ac.zip) 
+Aula 2 | Instalando e configurando banco de dados | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/49ac579aff9d9382b7119fca541ed023308f5e05.zip) 
+Aula 2 | Configurando naming strategy | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/80c8e000c0191af072a25f1038f002109a945e6f.zip) 
+Aula 3 | Controller e requisições | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/4babb7315d55185f32983176ad3e9064e2b8dc53.zip) 
+Aula 3 | Criando entidades e tabelas do banco de dados | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/9b5e83a522d4247ef8bc676aaf8d1d694f042eb5.zip) 
+Aula 4 | Lista de alunos e camada de repositório | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/520c0bff85ef4979f53961c28459e30194bc9305.zip) 
+Aula 4 | Implementando cadastarar aluno | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/136e6fe9bfcd38be0869e1997c64747c856c6ead.zip) 
+Aula 4 | Implementando busca por id aluno | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/b5b5b8ff32bb526d82ba058de10f4ff630a9a81e.zip) 
+Aula 4 | Atualizando aluno | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/b51d588b5713881b530b5b933a1b5f6fb47d52a2.zip) 
+Aula 4/5| Exclusão, validação e serialização | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/3d56e3da4019c06d28bcc528e78cffe60363db1a.zip) 
+Aula 6/7 | Paginação e Tratando Exceções | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/3e79026324cec40684d48c7ef0e3c1e5e6da6d77.zip) 
+Aula 8 | Configurando HATEOAS | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/fa097a6daad98e3f3fa5638a94f262492671ca52.zip) 
+Aula 9 | Ajustes finais e documentação | [Download](https://github.com/treinaweb/treinaweb-nestjs-desenvolvimento-apis-rest/archive/f6000cd6099f099c68b8c3ca39bb4e1a0cfa876c.zip) 
